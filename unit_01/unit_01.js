@@ -56,54 +56,75 @@ document.querySelector('.out-10').innerHTML = '<h2>Hi</h2>'
 // Task 11.
 // На странице создан div.out-11. Запишите внутрь него строку '123'. Для записи используйте innerHTML. Второй операцией - допишите в div.out-11 строку '456'. Для дозаписи примените +=. Обратите внимание - код уже набран, вам нужно удалить комментарий и изучить принцип работы. 
 
-// document.querySelector('.out-11').innerHTML = '123';
-// document.querySelector('.out-11').innerHTML += '345';
-
-
+document.querySelector('.out-11').innerHTML = '123';
+document.querySelector('.out-11').innerHTML += '456';
 
 
 // Task 12.
 //  На странице создан div.out-12.  Получите его в переменную a. С помощью innerHTML запишите внутрь переменной a число 3.1415. Изучите как в JS пишутся дроби - через точку или через запятую!
 
-// let a = document.querySelector('.out-12');
+let a = document.querySelector('.out-12')
 
+a.innerHTML = 3.1415 // дроби пишутся через точку. Используя запятую получаем целое число.
 
 // Task 13.
 // На странице создан div.out-13. Получите его в переменную out13. С помощью innerHTML запишите в него строку: '<img src="https://itgid.info/img/js20/js20_unit_01.png" alt="js">'
 //Обратите внимание. Вам придется вставить строку, которая уже содержит кавычки. Главное чтобы кавычки чередовались. Поэтому при вставке оберните данную строку одинарными кавычками. Если все сделано верно - то на странице появится картинка
 
+let out13 = document.querySelector('.out-13').innerHTML = '<img src="https://itgid.info/img/js20/js20_unit_01.png" alt="js">'
 
 // Task 14.
 //Создайте две переменных z1 = 6, z2 = 3. В div.out-14  выведите результат умножение z1 на z2.
 let z1 = 6;
 let z2 = 3;
 
+document.querySelector('.out-14').innerHTML = z1 * z2
+
 // Task 15.
 // Создайте две переменных y1 = 6, y2 = 3. В div.out-15 выведите результат него деления y1 на y2.
+
+let y1 = 6
+let y2 = 3
+
+document.querySelector('.out-15').innerHTML = y1 / y2
 
 
 // Task 16.
 // Создайте две переменные x1='Hello', x2 = 5.  В div.out-16 выведите сумму x1 + x2. Изучите результат операции.
 
+x1 = 'Hello'
+x2 = 5
 
+document.querySelector('.out-16').innerHTML = x1 + x2 // при сложении строки и числа результатом будет строка. Процедура называется конкатенация.
 
 // Task 17.
 // Получите div.out-17 в переменную out17. Выведите эту переменную в консоль. Изучите вывод.
 
-// let out17 = document.querySelector('.out-17');
-// console.log(out17);
-// console.dir(out-17);
+let out17 = document.querySelector('.out-17');
+console.log(out17)
+console.dir(out17);
+
 
 // Task 18.
 // Получите div.out-18 в переменную out18. Выведите эту переменную в консоль. Присвойте out18 значение 5 (out18 = 5). Выведите переменную в консоль. Изучите вывод.
 
+let out18 = document.querySelector('.out-18')
+console.log(out18)
+
+out18 = 5
+console.log(out18) // произошло переприсвоение. В консоли видим число 5
 
 // Task 19.
 // Получите div.out-19 в переменную out19. Выведите в консоль out19. Теперь получите в эту же переменную out19 блок div c классом out-19-test. Выведите переменную out19 в консоль. Изучите что изменилось.
 
+let out19 = document.querySelector('.out-19')
+console.log(out19)
+
+out19 = document.querySelector('.out-19-test')
+console.log(out19) // переприсвоение
 
 // Task 20
 // Получите div.out-20 в переменную out20. C помощью textContent запишите в него строку '<h2>Hi</h2>'. Изучите результат. Посмотрите как этот вывод отличается от вывода в 10 task.
 
-//let out20 = document.querySelector('.out-20');
-// out20.textContent = '<h2>Hi</h2>';
+let out20 = document.querySelector('.out-20');
+out20.textContent = '<h2>Hi</h2>'; // textContent переводит все в строку. InnerHTML - учитывает html теги
