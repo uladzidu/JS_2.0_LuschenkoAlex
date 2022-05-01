@@ -1,43 +1,67 @@
 // Task 1.
 // Создайте две переменные a = 7 и b = 9. Выведите в консоль результа умножения a на b.
 
+let a = 7
+let b = 9
+
+console.log(a * b )
+
 // Task 2.
 // Создайте две переменные c = 7 и d = 9. Выведите на страницу в .out-2 результат деления c на d.
 
-// document.querySelector('.out-2').textContent = 
+let c = 7
+let d = 9
+
+document.querySelector('.out-2').textContent = c / d
 
 // Task 3.
 // Создайте две переменные e = 3 и f = 5. Выведите на страницу  в .out-3 результат сложения e + f.
 
-// document.querySelector('.out-3').textContent = 
+let e = 3
+let f = 5
+
+document.querySelector('.out-3').textContent = e + f
 
 // Task 4.
 // Создайте две переменные e1 = '3' и f1 = 5. Выведите на страницу  в .out-4 результат сложения e1 + f1. Объясните разницу.
 
-// document.querySelector('.out-4').textContent = 
+let e1 = '3'
+let f1 = 5
+
+document.querySelector('.out-4').textContent = e1 + f1 // при сложении строки и числа js преобразует число в строку и склеивает значения. Данная процедура работает только со сложением, в остальных случаях число в ввиде строки преобразуется в число.
 
 // Task 5.
 // Создайте две переменные e2 = 3 и f2 = 0. Выведите на страницу  в .out-5 результат деления e2 на f2.
 
-// document.querySelector('.out-5').textContent = 
+let e2 = 3
+let f2 = 0
+
+document.querySelector('.out-5').textContent = e2 / f2 // при делении на 0 js возвращает значение "infinity"
 
 // Task 6.
 // Создайте две переменные e3 = 3 и f3 = 'Hello'. Выведите на страницу  в .out-6 результат сложения двух переменных.
 
-// document.querySelector('.out-6').textContent = 
+let e3 = 3
+let f3 = 'Hello'
+
+document.querySelector('.out-6').textContent = e3 + f3
 
 // Task 7.
 // Создайте две переменные e4 = 3 и f4 = 'Hello'. Выведите на страницу  в .out-7 результат умножения двух переменных.
 
-// document.querySelector('.out-7').textContent = 
+let e4 = 3
+let f4 = 'Hello'
+
+document.querySelector('.out-7').textContent = e4 * f4 // Nan .
 
 // Task 8.
 // По нажатию на кнопку .b-8 выполняется функция, которая выводит в div.out-8 то, что пользователь ввел в input.i-8.
 
 function t8() {
     // value всегда получаем внутри функции
-    // let data = document.querySelector('.i-8').value; // получили значение
+    let data = document.querySelector('.i-8').value; // получили значение
     // тут выводим
+    document.querySelector('div.out-8').textContent = data
 }
 
 document.querySelector('.b-8').onclick = t8;
@@ -46,6 +70,10 @@ document.querySelector('.b-8').onclick = t8;
 // По нажатию на кнопку .b-9 выполняется функция t9, которая выводит в div.out-9 то, что пользователь ввел в input.i-9. Добавьте очистку input после нажатия кнопки.
 
 function t9() {
+
+    let data = +document.querySelector('input.i-9').value
+    document.querySelector('div.out-9').textContent = data
+    document.querySelector('input.i-9').value = ''
 
 }
 
@@ -56,6 +84,9 @@ document.querySelector('.b-9').onclick = t9;
 
 function t10() {
 
+    let data = +document.querySelector('input.i-10').value
+    document.querySelector('div.out-10').textContent = data * 20
+
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -64,6 +95,9 @@ document.querySelector('.b-10').onclick = t10;
 // По нажатию на кнопку .b-11 выполняется функция t11, которая выводит на страницу в .out-11 число, которое ввел пользователь в i-11 и к нему добавленное число 55. В этой задаче мы не приводим к числу полученное из input.
 
 function t11() {
+
+    let data = document.querySelector('input.i-11').value
+    document.querySelector('div.out-11').textContent = data + 55 // т.к. значение из инпута возвращает строку происходит слияние строки и числа. Число преобазуется в строку.
 
 }
 
@@ -74,6 +108,10 @@ document.querySelector('.b-11').onclick = t11;
 
 function t12() {
 
+    let dataName = document.querySelector('input.i-12-1').value
+    let dataSurname = document.querySelector('input.i-12-2').value
+    document.querySelector('.out-12').textContent = `Hello ${dataName} ${dataSurname}`
+
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -82,6 +120,10 @@ document.querySelector('.b-12').onclick = t12;
 // При нажатии кнопки .b-13 выполняется t13. Функция получает из input.i-13-1 и .i-13-2 числа в переменные a, b. После чего в .out-13 выводит их сумму. Преобразовывайте a, b в числа!!!!
 
 function t13() {
+
+    let a = +document.querySelector('input.i-13-1').value
+    let b = +document.querySelector('input.i-13-2').value
+    document.querySelector('.out-13').textContent = a + b
 
 }
 
@@ -92,6 +134,8 @@ document.querySelector('.b-13').onclick = t13;
 
 function t14() {
 
+    document.querySelector('input.i-14').value = 'Go'
+
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -101,6 +145,8 @@ document.querySelector('.b-14').onclick = t14;
 
 function t15() {
 
+    document.querySelector('.i-15').style.border = '4px solid red'
+
 }
 
 document.querySelector('.b-15').onclick = t15;
@@ -109,6 +155,10 @@ document.querySelector('.b-15').onclick = t15;
 //По нажатию на кнопку .b-16 выполняется функция t16. Функция получает из .i-16-1 и i-16-2 числа. Выведите в .out-16 сумму данных чисел по нажатию кнопки b-16. Не переводите полученное из input в число!!!!
 
 function t16() {
+
+    let a = document.querySelector('input.i-16-1').value
+    let b = document.querySelector('input.i-16-2').value
+    document.querySelector('.out-16').textContent = a + b
 
 }
 
@@ -131,6 +181,8 @@ document.querySelector('.b-17').onclick = t17;
 
 function t18() {
 
+    let a = document.querySelector('.i-18').value
+    document.querySelector('.out-18').textContent = parseFloat(a)
 }
 
 document.querySelector('.b-18').onclick = t18;
@@ -139,6 +191,18 @@ document.querySelector('.b-18').onclick = t18;
 // По нажатию кнопки .b-19 функция t19 дожна в out-19 вывести сумму двух отрицательных чисел из input .i-19-1 и .i-19-2. 
 
 function t19() {
+
+    let a = +document.querySelector('.i-19-1').value
+    let b = +document.querySelector('.i-19-2').value
+
+    if (a > 0) {
+        a *= -1
+    }
+    if (b > 0) {
+        b *= -1
+    }
+
+    document.querySelector('.out-19').textContent = a + b
 
 }
 
@@ -150,8 +214,10 @@ document.querySelector('.b-19').onclick = t19;
 let count = 0;
 
 function t20() {
-    count = count + 1; // можно сократить count++
-    // тут допишите вывод в out-20
+
+    count++
+    let a = document.querySelector('.out-20').textContent = count
+
 }
 
 document.querySelector('.b-20').onclick = t20;
