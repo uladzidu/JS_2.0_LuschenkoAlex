@@ -7,6 +7,17 @@
 
 function t1() {
 
+    let outVariable = document.querySelector('.out-1')
+    let out = ''
+
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            out += '*'
+        }
+        out += '_'
+    }
+    
+    outVariable.textContent = out
 }
 
 document.querySelector('.b-1').onclick = t1;
@@ -21,6 +32,19 @@ document.querySelector('.b-1').onclick = t1;
 // *_*_*_
 // <p>Решить задачу с помощью вложенных циклов. Внешний цикл выводит цифру и перенос строки br, внутренний - *_, и после этого внешний - знак переноса.</p>
 function t2() {
+
+    let outVariable = document.querySelector('.out-2')
+    let out = ''
+
+    for (let i = 1; i < 4; i++) {
+        out += i + '<br>'
+        for (let j = 0; j < 3; j++) {
+            out += '*_'
+        }
+        out += '<br>'
+    }
+
+    outVariable.innerHTML = out
 
 }
 
@@ -37,6 +61,18 @@ document.querySelector('.b-2').onclick = t2;
 // <p>Решить задачу с помощью вложенных циклов. Внутренний цикл выводит *_,  внешний цикл выводит перенос строки br.</p>
 function t3() {
 
+    let outVariable = document.querySelector('.out-3')
+    let out = ''
+
+    for (let i = 0; i < 4; i++) {
+        for (let j = 1; j < 4; j++) {
+            out += '*_'
+        }
+        out += '<br>'
+    }
+
+    outVariable.innerHTML = out
+
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -46,6 +82,19 @@ document.querySelector('.b-3').onclick = t3;
 // 1_1*2*3*4*5*2_1*2*3*4*5*3_1*2*3*4*5*
 // Внешний цикл выводит цифру и _, а внутренний выводит от 1 до 5 с *
 function t4() {
+
+    let outVariable = document.querySelector('.out-4')
+    let out = ''
+
+    for (let i = 1; i < 4; i++) {
+        out += i + '_'
+        for (let j = 1; j < 6; j++) {
+            out += j + '*'
+        }
+
+    }
+
+    outVariable.innerHTML = out
 
 }
 
@@ -62,6 +111,22 @@ document.querySelector('.b-4').onclick = t4;
 // <p>Вложенный цикл в зависимости от четного или нет k (счетчика цикла) рисует или 0 или 1. Внешний цикл - br.</p>
 function t5() {
 
+    let outVariable = document.querySelector('.out-5')
+    let out = ''
+
+    for (let i = 0; i < 3; i++) {
+        for (let k = 0; k < 6; k++) {
+            if (k % 2 === 0) {
+                out += 1
+            } else if (k % 2 !== 0) {
+                out += 0
+            }
+        }
+        out += '<br>'
+    }
+
+    outVariable.innerHTML = out
+
 }
 
 document.querySelector('.b-5').onclick = t5;
@@ -77,6 +142,18 @@ document.querySelector('.b-5').onclick = t5;
 
 function t6() {
 
+    let outVariable = document.querySelector('.out-6')
+    let out = ''
+
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 1; j++) {
+            out += '10x01x'
+        }
+        out += '<br>'
+    }
+
+    outVariable.innerHTML = out
+
 }
 
 document.querySelector('.b-6').onclick = t6;
@@ -91,6 +168,22 @@ document.querySelector('.b-6').onclick = t6;
 // ****
 
 function t7() {
+
+    let outVariable = document.querySelector('.out-7')
+    let out = ''
+
+    let numOfJ = 1
+
+    for (let i = 0; i < 4; i++) {
+
+        for (let j = 0; j < numOfJ; j++) {
+            out += '*'
+        }
+        out += '<br>'
+        numOfJ += 1
+    }
+
+    outVariable.innerHTML = out
 
 }
 
@@ -109,6 +202,22 @@ document.querySelector('.b-7').onclick = t7;
 
 function t8() {
 
+    let outVariable = document.querySelector('.out-8')
+    let out = ''
+
+    let numOfJ = 5
+
+    for (let i = 0; i < 5; i++) {
+
+        for (let j = 0; j < numOfJ; j++) {
+            out += '*'
+        }
+        out += '<br>'
+        numOfJ = numOfJ - 1
+    }
+
+    outVariable.innerHTML = out
+
 }
 
 document.querySelector('.b-8').onclick = t8;
@@ -124,6 +233,22 @@ document.querySelector('.b-8').onclick = t8;
 // 1_2_3_4_5_
 
 function t9() {
+
+    let outVariable = document.querySelector('.out-9')
+    let out = ''
+
+    let numOfJ = 2
+
+    for (let i = 0; i < 5; i++) {
+
+        for (let j = 1; j < numOfJ; j++) {
+            out += j + '_'
+        }
+        out += '<br>'
+        numOfJ += 1
+    }
+
+    outVariable.innerHTML = out
 
 }
 
@@ -142,6 +267,24 @@ document.querySelector('.b-9').onclick = t9;
 
 function t10() {
 
+    let outVariable = document.querySelector('.out-10')
+    let out = ''
+
+    for (let i = 0; i < 5; i++) {
+        for (let j = 1; j <= 10; j++) {
+            if (j === 10) {
+                out += `${(i + 1) * 10}_`
+            } else {
+                out += `${i}${j}_`
+            }
+        }
+        out += '<br>'
+
+    }
+
+    outVariable.innerHTML = out
+
 }
+
 
 document.querySelector('.b-10').onclick = t10;
