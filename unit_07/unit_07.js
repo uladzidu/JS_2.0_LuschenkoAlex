@@ -5,6 +5,8 @@ let a1 = 8;
 
 function t1() {
 
+    let out = document.querySelector('.out-1').textContent = a1
+
 }
 
 document.querySelector('.b-1').onclick = t1;
@@ -17,7 +19,7 @@ document.querySelector('.b-1').onclick = t1;
 let a2 = 8;
 function t2() {
 
-    //return
+    return a2
 }
 
 document.querySelector('.b-2').onclick = function () {
@@ -32,6 +34,8 @@ document.querySelector('.b-2').onclick = function () {
 // Наша предыдущая функция, сильно все еще зависима от внешних переменных. Давайте сделаем ее более универсальной. Пусть функция t3 принимает 2 аргумента и возвращает (return) их произведение. Допишите код функции так, чтобы она возвращала произведение двух чисел, переданных ей в качестве аргументов a, b. Протестируем функцию на двух примерах, с помощью кнопок .b-3-1 и .b-3-2.
 
 function t3(a, b) {
+
+    return a * b
 
 }
 
@@ -48,10 +52,12 @@ document.querySelector('.b-3-2').onclick = function () {
 
 function t4(year) {
 
+    return new Date().getFullYear() - year
+
 }
 
 document.querySelector('.b-4').onclick = function () {
-    document.querySelector('.out-4').textContent = t4(1983);
+    document.querySelector('.out-4').textContent = t4(1997);
 }
 
 
@@ -61,10 +67,12 @@ document.querySelector('.b-4').onclick = function () {
 
 function t5(yourName) {
 
+    return yourName.length
+
 }
 
 document.querySelector('.b-5').onclick = function () {
-    document.querySelector('.out-5').textContent = t5('Alex');
+    document.querySelector('.out-5').textContent = t5('Vladislav');
 }
 
 
@@ -73,6 +81,10 @@ document.querySelector('.b-5').onclick = function () {
 // Напишите функцию t6, которая принимает 2 числа и возвращает случайное целое число от первого до второго принятого параметра. Внимание, это первая задача, решение которой нужно найти в google. Не пишите решение сами!
 
 function t6(a, b) {
+
+    let rand = a - 0.5 + Math.random() * (b - a + 1);
+
+    return Math.round(rand);
 
 }
 
@@ -91,7 +103,9 @@ function t7() {
     // без пробелов, через запятые 33,123,255
     // у вас есть функция t6, которая может генерировать случайные целые числа в нужном диапазоне. 
     // давайте воспользуемся ней. Просто запустим ее три раза внутри строки ниже
-    //return `rgb(${t6(0,255)}....допишите сами
+    return `rgb(${t6(0,255)},${t6(0,255)},${t6(0,255)})`
+
+
 }
 
 document.querySelector('.b-7').onclick = function () {
@@ -103,6 +117,8 @@ document.querySelector('.b-7').onclick = function () {
 // Напишите функцию t8, которая принимает строку в качестве параметра и возвращает результат с очищенными пробелами в начале и вконце строки. Т.е.принимает _hello_(где знак _ символизирует пробел), а возвращает hello. Для удаления пробелов - используйте trim.
 
 function t8(str) {
+
+    return str.trim()
 
 }
 
@@ -118,6 +134,8 @@ document.querySelector('.b-8').onclick = function () {
 
 function t9(num) {
 
+   return num % 2 === 0
+
 }
 
 document.querySelector('.b-9').onclick = function () {
@@ -130,8 +148,11 @@ document.querySelector('.b-9').onclick = function () {
 
 function t10(x, y) {
 
+    return (x > y) || (x === y) ? x : y
+
 }
 
 document.querySelector('.b-10').onclick = function () {
+
     document.querySelector('.out-10').textContent = t10(3, 9);
 }
