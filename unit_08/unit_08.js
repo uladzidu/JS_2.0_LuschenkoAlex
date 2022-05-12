@@ -109,7 +109,7 @@ function t5() {
     let out2 = ''
     let num = 0
 
-    while (num < 18) {
+    while (num < 17) {
         num++
         num %2 === 0 ? out2 += `${num}_**` : out2 += `${num}_*`
 
