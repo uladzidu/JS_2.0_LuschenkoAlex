@@ -239,7 +239,7 @@ function f15() {
     div.innerHTML = '15'
     div.classList.add('bg-orange')
 
-    div.before(out)
+    out.before(div)
 
 
 }
@@ -251,6 +251,14 @@ document.querySelector('.b-15').onclick = f15;
 
 function f16() {
 
+    let out = document.querySelector('.out-16')
+    let div = document.createElement('div')
+
+    div.innerHTML = '16'
+    div.classList.add('bg-orange')
+
+    out.after(div)
+
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -259,6 +267,14 @@ document.querySelector('.b-16').onclick = f16;
 // Кнопкa .b-17, которая запускает функцию f17. Функция создает через createElement div c текстом 17 и добавляет ему класс .bg-orange. Созданный div заменяет .out-17 с помощью replaceWith.
 
 function f17() {
+
+    let out = document.querySelector('.out-17')
+    let div = document.createElement('div')
+
+    div.innerHTML = '17'
+    div.classList.add('bg-orange')
+
+    out.replaceWith(div)
 
 }
 
@@ -269,6 +285,11 @@ document.querySelector('.b-17').onclick = f17;
 
 function f18() {
 
+    let out = document.querySelector('.out-18')
+    let paragraph = document.querySelector('.p-18')
+
+    out.innerHTML = paragraph.getAttribute('data-b')
+
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -277,6 +298,19 @@ document.querySelector('.b-18').onclick = f18;
 // Кнопкa .b-19, которая запускает функцию f19. Функция с помощью getAttribute получает data-b атрибут с параграфов p-19 и выводит в .out-19 через пробел. Обратите внимание, что элементов .p-19 больше одного.
 
 function f19() {
+
+    let outVar = document.querySelector('.out-19')
+    let paragraphs = document.querySelectorAll('.p-19')
+
+    let out = ''
+
+    for (let i = 0; i < paragraphs.length; i++) {
+
+       out += paragraphs[i].getAttribute('data-b') + ' '
+
+    }
+
+    outVar.textContent = out
 
 }
 
@@ -287,6 +321,10 @@ document.querySelector('.b-19').onclick = f19;
 
 function f20() {
 
+    let div = document.querySelector('.out-20')
+    div.setAttribute('title', 'go')
+
+    // console.log(div)
 }
 
 document.querySelector('.b-20').onclick = f20;
