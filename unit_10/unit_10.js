@@ -107,6 +107,15 @@ document.querySelector('.b-6').onclick = f6;
 let ar7 = ['china', 'india', 'brazil', 'japan', 'egypt'];
 
 function f7() {
+
+    let out = document.querySelector('.out-7')
+
+    ar7[7] = 'vietnam'
+    ar7[6] = 'turkey'
+    ar7[5] = 'italy'
+
+    out.innerHTML = ar7.join(' ')
+
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -121,6 +130,22 @@ document.querySelector('.b-7').onclick = f7;
 let ar8 = [];
 
 function f8() {
+
+    let out8 = document.querySelector('.out-8')
+    let out8_1 = document.querySelector('.out-8-1')
+    let out = ''
+
+    ar8[3] = 3.14
+    ar8[4] = 17
+    ar8[6] = 5
+
+    for (let i = 0; i < ar8.length; i++) {
+        out += ar8[i] + '-'
+    }
+
+    out8.innerHTML = out
+    out8_1.innerHTML = ar8.length
+
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -134,6 +159,10 @@ document.querySelector('.b-8').onclick = f8;
 let ar9 = [100, 200, 300, 400, 700, 121];
 
 function f9() {
+
+    let out = document.querySelector('.out-9')
+
+    out.textContent = ar9[ar9.length - 1]
 }
 
 document.querySelector('.b-9').onclick = f9;
@@ -147,6 +176,11 @@ document.querySelector('.b-9').onclick = f9;
 let ar10 = [100, 200, 300, 400, 700, 121];
 
 function f10() {
+
+    let out = document.querySelector('.out-10')
+
+    out.textContent = ar10[1] + ar10[ar10.length - 1]
+
 }
 
 document.querySelector('.b-10').onclick = f10;
@@ -163,6 +197,16 @@ let ar11 = [2, 3, 4, 5, 6, 7];
 
 function f11() {
 
+    let out = document.querySelector('.out-11')
+
+    let secondElem = ar11[2]
+
+    ar11[2] = ar11[4]
+    ar11[4] = secondElem
+
+
+    out.textContent = ar11.join(' ')
+
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -177,6 +221,16 @@ document.querySelector('.b-11').onclick = f11;
 let ar12 = ['test', 'west', 'list', 'class', 'best'];
 
 function f12() {
+
+    let out = document.querySelector('.out-12')
+
+    let theLastElem = ar12.length - 1
+    let zeroElem = ar12[0]
+
+    ar12[0] = ar12[theLastElem]
+    ar12[theLastElem] = zeroElem
+
+    out.textContent = ar12.join(' ')
 
 }
 
@@ -195,6 +249,18 @@ let ar13 = ['test', 'west', 'list', 'class', 'best'];
 
 function f13() {
 
+    let out = document.querySelector('.out-13')
+
+    let outString = ''
+
+    for (let i = 0; i < ar13.length; i++) {
+
+        outString += `${i} ${ar13[i]} `
+
+    }
+
+    out.textContent = outString
+
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -210,6 +276,15 @@ let ar14 = [1, 2, 3, 'hello', 66];
 
 function f14() {
 
+    let outSelector = document.querySelector('.out-14')
+    let out = ''
+
+    for (let i = 0; i < ar14.length; i++) {
+
+        out += ar14[ar14.length - i - 1] + ' '
+    }
+    outSelector.textContent = out
+
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -223,6 +298,18 @@ document.querySelector('.b-14').onclick = f14;
 let ar15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 
 function f15() {
+
+    let out = document.querySelector('.out-15')
+
+    let outString = ''
+
+    for (let i = 0; i < ar15.length; i++) {
+
+        ar15[i] > 0 ? outString += ar15[i] + ' ' : ''
+
+    }
+
+    out.textContent = outString
 
 }
 
@@ -240,6 +327,24 @@ let ar16_even = [];
 
 function f16() {
 
+    let out = document.querySelector('.out-16')
+    let divOdd = document.querySelector('.out-16-odd')
+    let divEven = document.querySelector('.out-16-even')
+
+    for (let i = 0; i < ar16.length; i++) {
+
+      if (ar16[i] %2 === 0 ) {
+            ar16_even.push(ar16[i])
+      }
+      if (ar16[i] %2 !== 0 ) {
+          ar16_odd.push(ar16[i])
+      }
+
+    }
+
+    divOdd.textContent = ar16_odd.join(' ')
+    divEven.textContent = ar16_even.join(' ')
+
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -253,6 +358,17 @@ document.querySelector('.b-16').onclick = f16;
 let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
 
 function f17() {
+
+    let out = document.querySelector('.out-17')
+    let num = 0
+
+    for (let i = 0; i < ar17.length; i++) {
+
+        ar17[i] > 3 ? num++ : ''
+
+    }
+
+    out.textContent = num
 
 }
 
@@ -269,6 +385,17 @@ let ar18 = [15, 24, 13, 78, 21, 4, 45, 67];
 
 function f18() {
 
+    let out = document.querySelector('.out-18')
+    let maxOfArray = 0
+
+    for (let i = 0; i < ar18.length; i++) {
+
+       ar18[i] > maxOfArray ? maxOfArray = ar18[i] : ''
+
+    }
+
+    out.textContent = maxOfArray
+
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -284,6 +411,17 @@ let ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
 
 function f19() {
 
+    let outSelector = document.querySelector('.out-19')
+    let minElemOfArray = ar19[0]
+
+    for (let i = 0; i < ar19.length; i++) {
+
+        if (ar19[i] < minElemOfArray) {
+            minElemOfArray = ar19[i]
+        }
+    }
+    outSelector.textContent = ar19.indexOf(minElemOfArray)
+
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -297,6 +435,17 @@ document.querySelector('.b-19').onclick = f19;
 let ar20 = [4, 5, 6, 7, 8, 9, 10];
 
 function f20() {
+
+    let out = document.querySelector('.out-20')
+    let sumOfArray = 0
+
+    for (let i = 0; i < ar20.length; i++) {
+
+        sumOfArray += ar20[i]
+
+    }
+
+    out.textContent = sumOfArray
 
 }
 
