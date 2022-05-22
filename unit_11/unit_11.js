@@ -6,15 +6,18 @@ function showArr(domElem, arr) {
     for (let i = 0; i < arr.length; i++) {
         out += arr[i] + ' ';
     }
+
     document.querySelector(domElem).innerHTML = out;
 }
 
 let d1 = [33, 'best', 66, 'best'];
 
 function f1() {
-    /**
-     * ваш код здесь
-     */
+
+    let input = document.querySelector('.i-1')
+
+    d1.push(input.value)
+
     showArr('.out-1', d1);
 }
 
@@ -26,6 +29,8 @@ document.querySelector('.b-1').onclick = f1;
 
 function f2() {
 
+    d1.pop() // метод pop() удаляет последний элемент в массиве и возвращает его
+
     showArr('.out-2', d1);
 }
 
@@ -36,6 +41,8 @@ document.querySelector('.b-2').onclick = f2;
 // функция выполняется при нажатии кнопки b-3
 
 function f3() {
+
+    d1.shift() // работает противоположно методу pop. Удаляет первый элемент массива и возвращает его
 
     showArr('.out-3', d1);
 }
@@ -49,6 +56,10 @@ document.querySelector('.b-3').onclick = f3;
 
 function f4() {
 
+    let input = document.querySelector('.i-4')
+
+    d1.push(input.value)
+
     showArr('.out-4', d1);
 }
 
@@ -59,6 +70,10 @@ document.querySelector('.b-4').onclick = f4;
 // функция выполняется при нажатии кнопки b-5
 
 function f5() {
+
+    let input = document.querySelector('.i-5')
+
+    d1.unshift(input.value) // добавляет элемент в начало массива и возвращает его длину
 
     showArr('.out-5', d1);
 }
@@ -75,6 +90,10 @@ let d6 = ['test', 5, 12];
 
 function f6() {
 
+    let input = document.querySelector('.i-6')
+
+    d6[d6.length] = input.value
+
     showArr('.out-6', d6);
 }
 
@@ -89,6 +108,8 @@ document.querySelector('.b-6').onclick = f6;
 let d7 = ['china', 'india', 'brazil', 'japan', 'egypt'];
 
 function f7() {
+
+   d7.splice(-1)
 
     showArr('.out-7', d7);
 }
@@ -105,6 +126,9 @@ let d8 = [2, '4', 12, 67, 'hello'];
 
 function f8() {
 
+    let input = document.querySelector('.i-8')
+    d8 = [input.value, ...d8]
+
     showArr('.out-8', d8);
 }
 
@@ -120,6 +144,8 @@ let d9 = [100, 200, 300, 400, 700, 121];
 
 function f9() {
 
+     d9.splice(0,1)
+
     showArr('.out-9', d9);
 }
 
@@ -134,6 +160,8 @@ document.querySelector('.b-9').onclick = f9;
 let d10 = [3, 14, 15, 92, 6];
 
 function f10() {
+
+    d10.reverse()
 
     showArr('.out-10', d10);
 }
@@ -151,6 +179,11 @@ let d11 = [2, 3, 4, 5, 6, 7];
 
 function f11() {
 
+    let input = +document.querySelector('.i-11').value
+    let out = document.querySelector('.out-11')
+
+    out.textContent = d11.indexOf(input) // indexOf() - метод массива, который возвращает индекс элемента, если таковой имеется и -1 если элемента нет
+
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -166,6 +199,18 @@ let d12 = [6, 62, 60, 70, 1, 5];
 
 function f12() {
 
+    let input = +document.querySelector('.i-12').value
+    let out = document.querySelector('.out-12')
+    let num
+
+    for (let i = 0; i < d12.length; i++) {
+
+        input === d12[i] ? num = d12[i] : out.textContent = -1
+
+    }
+
+    out.textContent = d12.indexOf(num)
+
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -180,6 +225,17 @@ document.querySelector('.b-12').onclick = f12;
 let d13 = [6, 0, 22, 1, 4, 76];
 
 function f13() {
+
+    let out = document.querySelector('.out-13')
+    let newArr = []
+
+    for (let i = 0; i < d13.length; i++) {
+
+        newArr.push(d13[d13.length - i - 1])
+
+    }
+
+    d13 = newArr
 
     showArr('.out-13', d13);
 }
@@ -197,6 +253,14 @@ let d14 = [];
 
 function f14() {
 
+    let input = +document.querySelector('.i-14').value
+
+    for (let i = 0; i < input; i++) {
+
+        d14.push(1)
+
+    }
+
     showArr('.out-14', d14);
 }
 
@@ -212,6 +276,11 @@ let d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 
 function f15() {
 
+    let input = +document.querySelector('.i-15').value
+
+    if (!d15.includes(input)) {
+        d15.push(input)
+    }
 
     showArr('.out-15', d15);
 }
@@ -230,6 +299,7 @@ let d162 = [23, 24, 56, 87];
 
 function f16() {
 
+    d16 = d161.concat(d162) // метод массива, который объединяет элементы массива не меняя исходные массивы и возвращает новый массив
     showArr('.out-16', d16);
 }
 
@@ -247,6 +317,14 @@ let d172 = [1, 2, 3, 4, 5];
 
 function f17() {
 
+    for (let i = 0; i < d171.length; i++) {
+        d17.push(d171[i])
+    }
+
+    for (let i = 0; i < d172.length; i++) {
+        d17.push(d172[i])
+    }
+
     showArr('.out-17', d17);
 }
 
@@ -262,6 +340,11 @@ document.querySelector('.b-17').onclick = f17;
 let d18 = ['b', 'c', '45', 'e', 'z', 'y'];
 
 function f18() {
+
+    let input = document.querySelector('.i-18').value
+    let out = document.querySelector('.out-18')
+
+    out.textContent = d18.includes(input)
 
 }
 
@@ -279,6 +362,17 @@ let maxString = '';
 
 function f19() {
 
+    let out = document.querySelector('.out-19')
+
+    for (let i = 0; i < d19.length; i++) {
+
+        if (d19[i].length > maxString.length) {
+            maxString = d19[i]
+        }
+    }
+
+    out.textContent = maxString
+
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -293,6 +387,9 @@ let d20 = [4, 5, 6, 7, 8, 9, 10];
 
 function f20() {
 
+    let out = document.querySelector('.out-20')
+
+    out.textContent = d20.join('')
 }
 
 document.querySelector('.b-20').onclick = f20;
