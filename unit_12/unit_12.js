@@ -222,6 +222,7 @@ function f12() {
         [0,1,0,1,0,1,0,1],
         [1,0,1,0,1,0,1,0],
     ];
+
     let out = ''
 
     for (let i = 0; i < a12.length; i++) {
@@ -245,8 +246,30 @@ let a13 = [];
 
 function f13() {
 
+    let resultArr = [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+    ]
 
+    for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 4; j++) {
+            if (i % 2 === 0) {
+                resultArr[i].push(0, 1)
+            } else {
+                resultArr[i].push(1, 0)
+            }
+        }
+    }
 
+    a13 = resultArr
+
+    console.log(a13)
 }
 
 document.querySelector('.b-13').onclick = f13;
