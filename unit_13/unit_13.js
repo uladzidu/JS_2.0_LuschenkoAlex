@@ -75,7 +75,7 @@ function f4() {
     let out = ''
 
     for (let key in a4) {
-        out += key + ' ' + a4[key] + ' <br>'
+        out += key + ' ' + a4[key] + '<br>' + ' <br>'
     }
 
     return out
@@ -91,10 +91,12 @@ document.querySelector('.b-4').onclick = () => {
 
 function f5(arr, block) {
     let out = '';
-    // цикл
-    // формат вывода `${key} : ${arr[key]} <br>`;
-    //
-    // тут вывод в блок block
+
+    for (let key in arr) {
+        out += `${key} : ${arr[key]} <br>`
+    }
+
+    document.querySelector(block).innerHTML = out
 }
 
 // давайте протестируем f5
@@ -118,6 +120,22 @@ let a6 = {
 
 function f6() {
 
+    let input1 = document.querySelector('.i-61').value
+    let input2 = document.querySelector('.i-62').value
+    let outSelector = document.querySelector('.out-6')
+    let out = ''
+
+    a6[input1] = input2
+
+    for (let key in a6) {
+        if (input1.length > 0 && input2.length > 0) {
+            out += key + ' : ' + a6[key] + '<br>'
+        } else {
+            return false
+        }
+    }
+
+    outSelector.innerHTML = out
 }
 
 document.querySelector('.b-6').onclick = f6;
