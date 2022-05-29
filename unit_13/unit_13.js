@@ -125,16 +125,13 @@ function f6() {
     let outSelector = document.querySelector('.out-6')
     let out = ''
 
-    a6[input1] = input2
-
-    for (let key in a6) {
-        if (input1.length > 0 && input2.length > 0) {
-            out += key + ' : ' + a6[key] + '<br>'
-        } else {
-            return false
-        }
+    if (input1.length > 0 && input2.length > 0) {
+        a6[input1] = input2
     }
 
+    for (let key in a6) {
+        out += key + ' : ' + a6[key] + '<br>'
+    }
     outSelector.innerHTML = out
 }
 
@@ -148,8 +145,18 @@ let a7 = {
     "e": 22
 };
 
-
 function f7() {
+
+    let input = document.querySelector('.i-7').value
+    let outSelector = document.querySelector('.out-7')
+
+    for (let key in a7) {
+        if (a7[input] !== undefined) {
+            outSelector.textContent = 1
+        } else {
+            outSelector.textContent = 0
+        }
+    }
 
 }
 
@@ -164,6 +171,18 @@ let a8 = {
 };
 
 function f8() {
+
+    let input = document.querySelector('.i-8').value
+    let outSelector = document.querySelector('.out-8')
+
+    for (let key in a8) {
+
+        if (a8[input] !== undefined) {
+            outSelector.textContent = a8[input]
+        } else {
+            outSelector.textContent = 0
+        }
+    }
 
 }
 
@@ -182,6 +201,15 @@ let a9 = {
 
 function f9() {
 
+    let input = document.querySelector('.i-9').value
+    let outSelector = document.querySelector('.out-9')
+    let out = ''
+
+
+
+
+    outSelector.textContent = out
+
 }
 
 document.querySelector('.b-9').onclick = f9;
@@ -190,6 +218,8 @@ document.querySelector('.b-9').onclick = f9;
 // Давайте напишем полезную функцию f10, которая проверяет есть ли значение в ассоциативном массиве. Фукнция должна возвращать true если есть, и false если нет. Массив и значение передавать функции в качестве параметров.
 
 function f10(arr, val) {
+
+
 
     //return true;
     //return false;
@@ -201,7 +231,7 @@ document.querySelector('.b-10').onclick = () => {
         "d": 54,
         "m": 22,
     }
-    document.querySelector('.out-10').innerHTML = f10(a10, 22);
+    document.querySelector('.out-10').innerHTML = f10(a10, 54);
 };
 
 
@@ -217,6 +247,15 @@ let a11 = {
 };
 
 function f11() {
+
+    let input = document.querySelector('.i-11').value
+    let outSelector = document.querySelector('.out-11')
+    let out = ''
+
+
+
+    outSelector.innerHTML = out
+
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -250,6 +289,19 @@ let a13 = {
 
 function f13() {
 
+    let outSelector = document.querySelector('.out-13')
+
+    let out = ''
+
+    for (let key in a13) {
+        if (typeof a13[key] === "number") {
+
+            out = out + a13[key]
+        }
+    }
+
+    outSelector.textContent = out
+
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -267,6 +319,14 @@ let a14 = {
 
 function f14() {
 
+    let outSelector = document.querySelector('.out-14')
+    let out = ''
+
+    for (let key in a14) {
+       out += a14[key][0] + ' '
+    }
+
+    outSelector.textContent = out
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -284,6 +344,17 @@ let a15 = {
 };
 
 function f15() {
+
+    let outSelector = document.querySelector('.out-15')
+    let out = ''
+
+    for (let key in a15) {
+        for (let i = 0; i < a15[key].length; i++) {
+            out += a15[key][i] + ' '
+        }
+    }
+
+    outSelector.textContent = out
 
 }
 
@@ -377,6 +448,16 @@ let a20 = {
 }
 
 function f20() {
+
+    let outSelector = document.querySelector('.out-20')
+    let out = ''
+
+    for (let key in a20) {
+        if (a20[key]) {
+
+        }
+    }
+
 
 }
 
