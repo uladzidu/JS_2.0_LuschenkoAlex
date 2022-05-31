@@ -90,6 +90,7 @@ document.querySelector('.b-4').onclick = () => {
 
 
 function f5(arr, block) {
+
     let out = '';
 
     for (let key in arr) {
@@ -150,14 +151,11 @@ function f7() {
     let input = document.querySelector('.i-7').value
     let outSelector = document.querySelector('.out-7')
 
-    for (let key in a7) {
         if (a7[input] !== undefined) {
             outSelector.textContent = 1
         } else {
             outSelector.textContent = 0
         }
-    }
-
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -175,14 +173,11 @@ function f8() {
     let input = document.querySelector('.i-8').value
     let outSelector = document.querySelector('.out-8')
 
-    for (let key in a8) {
-
         if (a8[input] !== undefined) {
             outSelector.textContent = a8[input]
         } else {
             outSelector.textContent = 0
         }
-    }
 
 }
 
@@ -201,14 +196,18 @@ let a9 = {
 
 function f9() {
 
-    let input = document.querySelector('.i-9').value
+    let input = +document.querySelector('.i-9').value
     let outSelector = document.querySelector('.out-9')
     let out = ''
 
+    let keysOfObj = Object.keys(a9)
+    let filteredKeys = keysOfObj.filter(key => a9[key] === input)
 
+    for (let i = 0; i < filteredKeys.length; i++) {
+        out += filteredKeys[i] + ' '
+    }
 
-
-    outSelector.textContent = out
+    outSelector.innerHTML = out
 
 }
 
@@ -219,10 +218,10 @@ document.querySelector('.b-9').onclick = f9;
 
 function f10(arr, val) {
 
+    let result = Object.keys(arr).filter( key => arr[key] === val )
 
+   return result.length > 0
 
-    //return true;
-    //return false;
 }
 
 document.querySelector('.b-10').onclick = () => {
@@ -249,13 +248,10 @@ let a11 = {
 function f11() {
 
     let input = document.querySelector('.i-11').value
-    let outSelector = document.querySelector('.out-11')
-    let out = ''
 
+    delete a11[input]
 
-
-    outSelector.innerHTML = out
-
+    f5(a11, '.out-11')
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -272,6 +268,12 @@ let a12 = {
 };
 
 function f12() {
+
+    let input = document.querySelector('.i-12').value
+
+
+
+    f5(a12, '.out-12')
 
 }
 
@@ -290,18 +292,16 @@ let a13 = {
 function f13() {
 
     let outSelector = document.querySelector('.out-13')
-
-    let out = ''
+    let sum = 0
 
     for (let key in a13) {
         if (typeof a13[key] === "number") {
 
-            out = out + a13[key]
+            sum +=  a13[key]
         }
     }
 
-    outSelector.textContent = out
-
+    outSelector.textContent = sum
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -355,7 +355,6 @@ function f15() {
     }
 
     outSelector.textContent = out
-
 }
 
 document.querySelector('.b-15').onclick = f15;
@@ -379,6 +378,15 @@ let a16 = {
 }
 
 function f16() {
+
+    let outSelector = document.querySelector('.out-16')
+    let out = ''
+
+    for (let key in a16) {
+        out += a16[key].name + ' '
+    }
+
+    outSelector.innerHTML = out
 
 }
 
@@ -405,6 +413,17 @@ let a17 = {
 
 function f17() {
 
+    let outSelector = document.querySelector('.out-17')
+    let out = ''
+
+    for (let key in a17) {
+        if (a17[key].age > 30) {
+            out += a17[key].name + ' '
+        }
+    }
+
+    outSelector.innerHTML = out
+
 }
 
 document.querySelector('.b-17').onclick = f17;
@@ -420,7 +439,20 @@ let a18 = {
 
 function f18() {
 
+    let input = document.querySelector('.i-18').value
+    let outSelector = document.querySelector('.out-18')
+    let out = ''
+
+        if (a18[input] !== undefined) {
+            for (let i = 0; i < a18[input].length; i++) {
+                out += a18[input][i] + ' '
+            }
+        }
+
+    outSelector.innerHTML = out
 }
+
+document.querySelector('.b-18').onclick = f18;
 
 // Task 19
 // При нажатии b-19 выполняете функцию f19. Функция должна в out-19 вывести цвет ветки станции которую пользователь ввел в i-19. Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
@@ -433,6 +465,18 @@ let a19 = {
 }
 
 function f19() {
+
+    let input = document.querySelector('.i-19').value
+    let outSelector = document.querySelector('.out-19')
+    let out = ''
+
+        if (a19[input] !== undefined) {
+            for (let i = 0; i < a19[input].length; i++) {
+
+            }
+        }
+
+outSelector.textContent = out
 
 }
 
