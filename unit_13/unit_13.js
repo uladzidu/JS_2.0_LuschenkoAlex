@@ -75,7 +75,7 @@ function f4() {
     let out = ''
 
     for (let key in a4) {
-        out += key + ' ' + a4[key] + '<br>' + ' <br>'
+        out += key + ' ' + a4[key] + ' <br>'
     }
 
     return out
@@ -269,9 +269,13 @@ let a12 = {
 
 function f12() {
 
-    let input = document.querySelector('.i-12').value
+    let input = +document.querySelector('.i-12').value
 
-
+    for (let key in a12) {
+        if (a12[key] === input) {
+            delete a12[key]
+        }
+    }
 
     f5(a12, '.out-12')
 
@@ -470,11 +474,13 @@ function f19() {
     let outSelector = document.querySelector('.out-19')
     let out = ''
 
-        if (a19[input] !== undefined) {
-            for (let i = 0; i < a19[input].length; i++) {
-
+    for (let key in a19){
+        for (let i = 0; i < a19[key].length; i++) {
+            if (a19[key][i].toLowerCase() === input.toLowerCase()) {
+                out += key
             }
         }
+    }
 
 outSelector.textContent = out
 
@@ -497,12 +503,14 @@ function f20() {
     let out = ''
 
     for (let key in a20) {
-        if (a20[key]) {
-
+        for (let i = 0; i < a20[key].length; i++) {
+            if (a20[key][i][1] === 2) {
+                out += a20[key][i][0] + ' '
+            }
         }
     }
 
-
+    outSelector.textContent = out
 }
 
 document.querySelector('.b-20').onclick = f20
