@@ -5,6 +5,12 @@ let a1 = [5,7,9, 11, 13, 15];
 
 function f1() {
 
+    let out = ''
+
+    for (let i = 0; i < a1.length; i++) {
+        out += a1[i] + ' '
+    }
+    document.querySelector('.out-1').innerHTML = out
 }
 
 document.querySelector('.b-1').addEventListener('click', f1);
@@ -16,6 +22,12 @@ let a2 = [5,7,9, 11, 13, 15];
 
 function f2() {
 
+    let out = ''
+
+    for (let i = 0; i < a2.length; i++) {
+        out += i + ' ' + a2[i] + ' '
+    }
+    document.querySelector('.out-2').innerHTML = out
 }
 
 document.querySelector('.b-2').addEventListener('click', f2);
@@ -25,6 +37,11 @@ document.querySelector('.b-2').addEventListener('click', f2);
 
 function f3() {
 
+    let divs = document.getElementsByClassName('out-3')
+
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].textContent = 3
+    }
 }
 
 document.querySelector('.b-3').addEventListener('click', f3);
@@ -35,6 +52,11 @@ document.querySelector('.b-3').addEventListener('click', f3);
 
 function f4() {
 
+    let divs = document.querySelectorAll('.out-4')
+
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].innerHTML = 4
+    }
 }
 
 document.querySelector('.b-4').addEventListener('click', f4);
@@ -45,6 +67,14 @@ document.querySelector('.b-4').addEventListener('click', f4);
 let a5 = [3,4,5,2,1,7,8,2,4,6,8,11,23,17];
 
 function f5() {
+
+let newArray = []
+
+    for (let item of a5) {
+        item > 7 ? newArray.push(item) : ''
+    }
+
+    return newArray
 
 }
 
@@ -59,6 +89,22 @@ let a6 = [[1,2], [3,4], [5,6]];
 
 function f6() {
 
+    let out = ''
+    let newArray = []
+
+    for (let i = 0; i < a6.length; i++) {
+        for (let j = 0; j < a6[i].length; j++) {
+            newArray.push(a6[i][j])
+        }
+    }
+
+    a6 = newArray
+
+    for (let i = 0; i < newArray.length; i++) {
+        out += newArray[i] + ' '
+    }
+
+document.querySelector('.out-6').innerHTML = out
 }
 
 document.querySelector('.b-6').addEventListener('click', f6);
@@ -70,6 +116,13 @@ let a7 = [{ id : 23, name: 'Ivan'}, {id: 45, name : 'Petr'}];
 
 function f7() {
 
+    let out = {}
+
+    for (let i = 0; i < a7.length; i++) {
+        out[a7[i].id] = a7[i].name
+    }
+
+    return out
 }
 
 document.querySelector('.b-7').addEventListener('click', ()=>{
@@ -84,6 +137,19 @@ let a8 = [ { id : 23, name: 'Ivan'}, {id: 45, name : 'Petr'}];
 
 function f8() {
 
+    let newArray = []
+
+    for (let i = 0; i < a8.length; i++) {
+        for (let key in a8[i]) {
+            if (typeof a8[i][key] === 'number') {
+                newArray.push(a8[i][key])
+            }
+        }
+    }
+
+    a8 = newArray
+
+    return a8
 }
 
 document.querySelector('.b-8').addEventListener('click', ()=>{
@@ -96,6 +162,16 @@ document.querySelector('.b-8').addEventListener('click', ()=>{
 let a9 = [ [4,3,2], [2,5], [0,0,0,0,0]];
 
 function f9() {
+
+    let maxIndex = a9[0].length - 1
+
+    for (let i = 0; i < a9.length; i++) {
+        if (a9[i].length - 1 > maxIndex) {
+            maxIndex = a9[i].length - 1
+        }
+    }
+
+    return maxIndex
 
 }
 
@@ -110,6 +186,13 @@ let a10 = [4, 6, 9, 'Hello'];
 
 function f10() {
 
+    let newArray = {}
+
+    for (let i = 0; i < a10.length; i++) {
+       newArray[a10[i]] = a10[i]
+    }
+
+    return newArray
 }
 
 document.querySelector('.b-10').addEventListener('click', () => {
@@ -128,6 +211,12 @@ let a11 = {
 
 function f11() {
 
+    let out = ''
+
+    for (let key in a11) {
+        a11[key] > 10 ? out += a11[key] + ' ' : ''
+    }
+document.querySelector('.out-11').innerHTML = out
 }
 
 document.querySelector('.b-11').addEventListener('click', f11);
@@ -139,6 +228,12 @@ let a12 = [4,5,6,7];
 
 function f12() {
 
+    let out = ''
+
+    for (let item of a12) {
+        out += item + ' '
+    }
+document.querySelector('.out-12').textContent = out
 }
 
 document.querySelector('.b-12').addEventListener('click', f12);
@@ -150,6 +245,14 @@ document.querySelector('.b-12').addEventListener('click', f12);
 let a13 = 'testone';
 
 function f13() {
+
+    let out = ''
+
+    for (let item of a13) {
+        out += item + ' '
+    }
+
+    document.querySelector('.out-13').textContent = out
 
 }
 
@@ -164,6 +267,14 @@ let a14 = new Set([4,5,6]);
 
 function f14() {
 
+    let out = ''
+
+    for (let item of a14) {
+        out += item + ' '
+    }
+
+    document.querySelector('.out-14').textContent = out
+
 }
 
 document.querySelector('.b-14').addEventListener('click', f14);
@@ -173,6 +284,12 @@ document.querySelector('.b-14').addEventListener('click', f14);
 
 
 function f15() {
+
+    let allSelectors = document.querySelectorAll('.out-15')
+
+    for (let item of allSelectors) {
+        item.innerHTML = 15
+    }
 
 }
 
