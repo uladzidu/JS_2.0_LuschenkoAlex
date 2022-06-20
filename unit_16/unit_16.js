@@ -52,10 +52,10 @@ document.querySelector('.b-3').addEventListener('click', f3);
 
 function f4() {
 
-    let divs = document.querySelectorAll('.out-4')
+    let divs = document.querySelectorAll('div.out-4')
 
     for (let i = 0; i < divs.length; i++) {
-        divs[i].innerHTML = 4
+        divs[i].textContent += 4
     }
 }
 

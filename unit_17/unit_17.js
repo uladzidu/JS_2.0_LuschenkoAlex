@@ -19,9 +19,7 @@ let a1_res = [],
 let a1 = [4, 5, 6, 7, 12, 34, 56, 78, 90, 11];
 
 function t1() {
-    a1_res = a1.map(elem => {
-        return elem * 2;
-    });
+    a1_res = a1.map(elem => {return elem * 2});
     return a1_res;
 }
 
@@ -36,6 +34,10 @@ let a2 = [2, 3, 4, 5, 10, 11, 12];
 
 function t2() {
 
+    let mappedArray = a2.map(function (elem,index) {
+        return elem ** 2
+    })
+    return mappedArray
 }
 
 document.querySelector('.b-2').onclick = () => {
@@ -51,6 +53,10 @@ let a3 = [4, "3", 6, 7, "12", 34, "56", 78, 90, 11];
 
 function t3() {
 
+    a3_res = a3.map(elem => +elem)
+
+    return a3_res
+
 }
 
 document.querySelector('.b-3').onclick = () => {
@@ -65,13 +71,14 @@ let a4 = [4, "3", 6, 7, "12", 34, "56", 78, 90, 11];
 
 function t4() {
 
+    let a4_res = a4.filter(elem => typeof elem === 'number')
+
+    return a4_res
 }
 
 document.querySelector('.b-4').onclick = () => {
     console.log(t4());
 }
-
-
 
 // Task 5 ============================================
 /*  Дан массив a5 = [3, 14, 15, 92]. C помощью filter переберите массив и создайте a5_res, который содержит только четные числа из a5. Возвратите a5_res. Действия должны запускаться при вызове функции t5. Проверьте, чтобы функция корректно работала со строками, т.е. '6' не должно попасть в результирующий массив.  */
@@ -80,13 +87,13 @@ let a5 = [3, 14, 15, 92, '6'];
 
 function t5() {
 
+    let a5_res = a5.filter(elem => elem % 2 === 0 && typeof elem === "number")
+    return a5_res
 }
 
 document.querySelector('.b-5').onclick = () => {
     console.log(t5());
 }
-
-
 
 // Task 6 ============================================
 /*  Дан массив a6 = [3, 14, 15, 92, "6", "5", "hello", 32]. C помощью filter переберите массив a6 и создайте массив a6_res, который содержит только числа из a6, которые больше 14. Возвратите a6_res. Действия должны запускаться при вызове функции t6. */
@@ -95,12 +102,13 @@ let a6 = [3, 14, 15, 92, "6", "5", "hello", 32];
 
 function t6() {
 
+    let a6_res = a6.filter(elem => elem > 14 && typeof elem === "number")
+    return a6_res
 }
 
 document.querySelector('.b-6').onclick = () => {
     console.log(t6());
 }
-
 
 // Task 7 ============================================
 /*  Дан массив a7 = ['Alto`s Adventure', 'Angry Birds 2', 'Anno 2205', 'Assassin`s Creed Chronicles']. C помощью map переберите массив a7 и создайте  a7_res, который содержит элементы массива a7 приведенные к нижнему регистру. Действия должны запускаться при вызове функции t7. Функция должна возвращать a7_res. */
@@ -108,6 +116,9 @@ document.querySelector('.b-6').onclick = () => {
 let a7 = ['Alto`s Adventure', 'Angry Birds 2', 'Anno 2205', 'Assassin`s Creed Chronicles'];
 
 function t7() {
+
+    let a7_res = a7.map(elem => elem.toLowerCase())
+    return a7_res
 
 }
 
@@ -122,13 +133,21 @@ let a8 = [3, 14, 15, 92, 7, 32, 59];
 
 function t8() {
 
+    let a8_res = []
+
+    a8.forEach(function (elem,index) {
+        if (elem %2 === 0) {
+            a8_res.push(index)
+        }
+    })
+
+     return a8_res
+
 }
 
 document.querySelector('.b-8').onclick = () => {
     console.log(t8());
 }
-
-
 
 // Task 9 ============================================
 /*  Дан массив a9 = ['Quantum Break', 'Gears of War 4', 'Mass Effect: Andromeda', 'Far Cry Primal']. С помощью forEach, переберите массив a9 и преобразуйте все записи в массиве в нижний регистр. Действия должны запускаться при вызове функции t9. Функция должна возвращать a9. */
@@ -137,12 +156,19 @@ let a9 = ['Quantum Break', 'Gears of War 4', 'Mass Effect: Andromeda', 'Far Cry 
 
 function t9() {
 
+    let newArray = []
+
+    a9.forEach(function (elem) {
+        newArray.push(elem.toLowerCase())
+    })
+    a9 = newArray
+
+    return a9
 }
 
 document.querySelector('.b-9').onclick = () => {
     console.log(t9());
 }
-
 
 
 // Task 10 ============================================
@@ -152,6 +178,19 @@ let a10 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
 
 function t10() {
 
+    let newArray = []
+
+    a10.forEach(function (elem) {
+        if (elem < 0) {
+            elem = 0
+            newArray.push(elem)
+        } else {
+            newArray.push(elem)
+        }
+    })
+    a10 = newArray
+
+    return a10
 
 }
 
@@ -166,7 +205,15 @@ let a11 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
 
 function t11() {
 
+   let a11_res = []
 
+    a11.filter(function (elem,index){
+        if (index %2 === 0) {
+            a11_res.push(elem)
+        }
+    })
+
+    return a11_res
 }
 
 document.querySelector('.b-11').onclick = () => {
@@ -181,6 +228,7 @@ let a12 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
 
 function t12() {
 
+    return Array.isArray(a12)
 
 }
 
@@ -197,6 +245,7 @@ let a13_num = 9;
 
 function t13() {
 
+    return a13.includes(a13_num)
 
 }
 
@@ -208,11 +257,12 @@ document.querySelector('.b-13').onclick = () => {
 /*  Дан массив a14 = ['c', 'C', 'd', 'e', 'E']. С помощью метода includes функция t14 должна определить, есть ли значение из переменной a14_sym в массиве. Если да - то функция возврaщает true, если нет false. Обратите внимание, функция должна искать независимо от регистра. Т.е. если в a14_sym будет строка 'd' то возвратить true, однако и на строку 'D' тоже возвратить true. */
 
 let a14 = ['c', 'C', 'd', 'e', 'E'];
-let a14_sym = 'e';
+let a14_sym = 'D';
 
 
 function t14() {
 
+    return a14.includes(a14_sym.toLowerCase())
 
 }
 
@@ -258,6 +308,15 @@ let a15 = [
 
 function t15() {
 
+    let a15_res = []
+
+    a15.filter(function (elem) {
+        if (elem.pnum.length > 0 && elem.pnum.length === 6) {
+            a15_res.push(elem)
+        }
+    })
+
+    return a15_res
 
 }
 
