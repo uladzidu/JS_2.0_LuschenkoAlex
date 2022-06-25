@@ -141,6 +141,7 @@ document.querySelector('.i-8').onkeydown = t8;
 // Task 9 ============================================
 /* Дан input .i-9. Напишите функцию t9, выводит в .out-9 количество (число) нажатых клавиш стрелка вниз. */
 let count = 0
+
 function t9(event) {
 
     let out = document.querySelector('.out-9')
@@ -161,8 +162,27 @@ let h = 75;
 let w = 75;
 
 function t10(event) {
-    // увеличиваем  h, w, потом присваиваем как свойства...
 
+    let block = document.querySelector('.block-10')
+
+    switch (event.key) {
+        case 'ArrowLeft' :
+            w--
+            block.style.width = w + 'px'
+            break;
+        case 'ArrowRight' :
+            w++
+            block.style.width = w + 'px'
+            break;
+        case 'ArrowDown' :
+            h--
+            block.style.height = h + 'px'
+            break;
+        case 'ArrowUp' :
+            h++
+            block.style.height = h + 'px'
+            break
+    }
 }
 
 document.querySelector('.i-10').onkeydown = t10;
@@ -177,8 +197,24 @@ document.querySelector('.i-10').onkeydown = t10;
 */
 
 function t11(event) {
-    console.log(event.key);
 
+    let ctrl = document.querySelector('.ctrl')
+    let keybordKeys = document.querySelectorAll('.keyboard')
+
+    for (let i = 0; i < keybordKeys.length; i++) {
+
+        keybordKeys[i].classList.remove('active')
+
+        if (event.key === keybordKeys[i].innerHTML) {
+            keybordKeys[i].classList.add('active')
+        }
+        if (event.code === keybordKeys[i].innerHTML) {
+            keybordKeys[i].classList.add('active')
+        }
+        if (event.ctrlKey) {
+            ctrl.classList.add('active')
+        }
+    }
 }
 
 document.querySelector('.i-11').onkeydown = t11;
