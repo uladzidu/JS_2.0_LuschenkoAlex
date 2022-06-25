@@ -21,4 +21,5 @@ section {
 
 .hide {
     display: none;
+    border: solid red;
 }

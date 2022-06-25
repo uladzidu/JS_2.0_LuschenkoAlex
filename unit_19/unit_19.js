@@ -1,19 +1,33 @@
-
 // Task 1 ============================================
 /* Добавьте на блок .div-1 событие клик и по клику запуск функции t1. Функция должна возвращать и выводить на экран содержимое блока (только текст). Вывод осуществляется в out-1.  */
 
 function t1() {
+
+    let out = document.querySelector('.out-1')
+    let div = document.querySelector('.div-1')
+
+    out.textContent = div.textContent
+
+    return div.textContent
+
 }
 
+document.querySelector('.div-1').onclick = t1
 // ваше событие здесь!!!
 
 // Task 2 ============================================
 /*  Добавьте на блок .div-2 событие клик и по клику запуск функции t2. Функция должна возвращать true или false в зависимости от того, нажата ли клавиша alt или нет в момент клика. Также, выводите на экран результат. Вывод осуществляется в out-2. */
 
-function t2() {
+function t2(e) {
+
+    let out = document.querySelector('.out-2')
+    out.textContent = e.altKey
+
+    return e.altKey
 
 }
 
+document.querySelector('.div-2').onclick = t2
 // ваше событие здесь!!!
 
 
@@ -24,8 +38,15 @@ let w3 = 75;
 
 function t3() {
 
+    let out = document.querySelector('.out-3')
+    document.querySelector('.div-3').style.width = w3 +'px'
+
+    out.textContent = w3
+    w3 = w3 + 5
+
 }
 
+document.querySelector('.div-3').onclick = t3
 // ваше событие здесь!!!
 
 
@@ -34,8 +55,15 @@ function t3() {
 
 function t4() {
 
-}
+    let out = document.querySelector('.out-4')
+    let div = document.querySelector('.div-4')
 
+    out.textContent = div.textContent
+
+    return div.textContent
+
+}
+document.querySelector('.div-4').ondblclick = t4
 // ваше событие здесь!!!
 
 // Task 5 ============================================
@@ -43,8 +71,16 @@ function t4() {
 
 function t5() {
 
-}
+    let div = document.querySelector('.div-5')
 
+    if (div.classList.contains('active')) {
+        div.classList.remove('active')
+    } else {
+        div.classList.add('active')
+    }
+
+}
+document.querySelector('.div-5').ondblclick = t5
 // ваше событие здесь!!!
 
 // Task 6 ============================================
@@ -52,8 +88,16 @@ function t5() {
 
 function t6() {
 
-}
+    let ul = document.querySelector('.ul-6')
 
+    if (!ul.classList.contains('hide')) {
+        ul.classList.add('hide')
+    } else {
+        ul.classList.remove('hide')
+    }
+
+}
+document.querySelector('.div-6').ondblclick = t6
 // ваше событие здесь!!!
 
 
@@ -62,8 +106,12 @@ function t6() {
 
 function t7() {
 
-}
+    let div = document.querySelector('.div-7')
 
+    div.classList.contains('active') ? div.classList.remove('active') : div.classList.add('active')
+
+}
+document.querySelector('.div-7').onclick = t7
 // ваше событие здесь!!!
 
 // Task 8 ============================================
@@ -71,8 +119,15 @@ function t7() {
 
 function t8() {
 
-}
+    const checkBox = document.querySelector('.ch-8');
 
+    document.addEventListener('contextmenu', event => {
+        if (checkBox.checked) {
+            event.preventDefault();
+        }
+    });
+}
+document.querySelector('.ch-8').onchange = t8
 // ваше событие здесь!!!
 
 
@@ -81,8 +136,10 @@ function t8() {
 
 function t9() {
 
+    let div = document.querySelector('.div-9').querySelector('img')
+    div.src = 'img/2.png'
 }
-
+document.querySelector('.div-9').oncontextmenu = t9
 // ваше событие здесь!!!
 
 
@@ -91,8 +148,13 @@ function t9() {
 
 function t10() {
 
-}
+    let div = document.querySelector('.div-10')
+    let img = div.querySelector('img')
 
+    img.src = 'img/2.png'
+
+}
+document.querySelector('.div-10').onmouseenter = t10
 // ваше событие здесь!!!
 
 // Task 11 ============================================
@@ -100,16 +162,28 @@ function t10() {
 
 function t11() {
 
-}
+    let div = document.querySelector('.div-11')
+    let img = div.querySelector('img')
 
+    img.src = 'img/2.png'
+
+
+}
+document.querySelector('.div-11').onmouseenter = t11
+document.querySelector('.div-11').onmouseleave = () => {
+    let div = document.querySelector('.div-11')
+    let img = div.querySelector('img')
+    img.src = 'img/1.png'
+}
 // ваше событие здесь!!!
 
 // Task 12 ============================================
 /*  Дан блок .div-12. Добавьте на него событие mousedown - при нажатии кнопки мыши - добавляйте ему класс active. */
 
-// () => {
-
-// }
+document.querySelector('.div-12').onmousedown = () => {
+    let div = document.querySelector('.div-12')
+    div.classList.add('active')
+}
 
 // ваше событие здесь!!!
 
@@ -117,13 +191,16 @@ function t11() {
 // Task 13 ============================================
 /*  Дан блок .div-13. Добавьте на него событие mousedown - при нажатии кнопки мыши - добавляйте ему класс active. Добавьте ему событие mouseup - при отпускании мыши - удаляйте класс active. */
 
-// () =>  {
+functionMouseDown = () =>  {
+    document.querySelector('.div-13').classList.add('active')
+}
 
-// }
+functionMouseUp = () => {
+    document.querySelector('.div-13').classList.remove('active')
+}
 
-// () =>  {
-
-// }
+    document.querySelector('.div-13').onmousedown = functionMouseDown
+    document.querySelector('.div-13').onmouseup = functionMouseUp
 // ваше событие здесь!!!
 
 
@@ -132,36 +209,54 @@ function t11() {
 
 function t14() {
 
-}
-document.querySelector('t-14').onclick = t14;
+    let div = document.querySelector('.div-14')
 
+    div.onclick = ( () => {div.classList.add('active')} )
+
+}
+
+document.querySelector('.b-14').onclick = t14
 
 // Task 15 ============================================
 /*  Дан блок .div-15. Добавьте на него событие move. При каждом движении мыши увеличивайте число внутри на 1. */
 
 function t15() {
 
+    let div = document.querySelector('.div-15')
+
+    div.textContent++
+
 }
+document.querySelector('.div-15').onmousemove = t15
 // ваше событие здесь!!!
 
 
 // Task 16 ============================================
 /*  Дан блок .div-16. Добавьте на него событие move. При каждом движении мыши увеличивайте ширину блока на 1px. */
-
+let width = 75
 function t16() {
 
+    document.querySelector('.div-16').style.width = width + 'px'
+    width++
+
 }
+document.querySelector('.div-16').onmousemove = t16
 // ваше событие здесь!!!
 
 // Task 17 ============================================
 /*  Дано две кнопки - b-17_on и b-17_off. Напишите фукнции t17On и t17Off которые включают и отключают событие move в задании 16. */
 
 function t17On() {
-
+    document.querySelector('.div-16').onmousemove = t16
 }
+
 function t17Off() {
-
+    document.querySelector('.div-16').onmousemove = null
 }
+
+document.querySelector('.b-17_on').onclick = t17On
+document.querySelector('.b-17_off').onclick = t17Off
+
 // ваше событие здесь!!!
 // ваше событие здесь!!!
 
@@ -170,7 +265,12 @@ function t17Off() {
 
 function t18() {
 
+    let div = document.querySelector('.div-18')
+
+    div.textContent = div.offsetWidth
+
 }
+document.querySelector('.div-18').onmouseenter = t18
 // ваше событие здесь!!!
 
 // Task 19 ============================================
@@ -178,14 +278,23 @@ function t18() {
 
 function t19() {
 
+    let div = document.querySelector('.div-19')
+
+    div.textContent = div.classList
+
 }
+document.querySelector('.div-19').onmouseout = t19
 // ваше событие здесь!!!
 
 
 // Task 20 ============================================
 /*  Дан элемент progress. Напишите фукнцию t20 которая увеличивает его value на 1 при каждом событии mousemove внутри progress. */
-
+let value = 10
 function t20() {
 
+    let progressBar = document.querySelector('progress')
+
+    progressBar.value += value + 1
 }
+document.querySelector('progress').onmousemove = t20
 // ваше событие здесь!!!
