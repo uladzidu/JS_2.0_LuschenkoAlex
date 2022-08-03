@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3204a353-cf62-4ff3-9035-8ea608928e6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/unit_21.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3204a353-cf62-4ff3-9035-8ea608928e6b" name="Changes" comment="unit 21" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,8 +38,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1656161102775</updated>
-      <workItem from="1656161104085" duration="29000" />
+      <workItem from="1656161104085" duration="56000" />
     </task>
+    <task id="LOCAL-00001" summary="unit 21">
+      <created>1656161149692</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656161149692</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -62,5 +66,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="unit 21" />
+    <option name="LAST_COMMIT_MESSAGE" value="unit 21" />
   </component>
 </project>
